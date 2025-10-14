@@ -49,12 +49,17 @@ else:
 
 
 #Zadávání čísla textu uživatel a vrácení textu pro další analýzu
-number_of_text = int(input("Enter a number btw. 1 and 3 to select: "))
-if number_of_text not in range(1,4):
+try:
+    number_of_text = int(input("Enter a number btw. 1 and 3 to select: "))
+    if number_of_text not in range(1,4):
+        print("You entered wrong number. Program exits.")
+        exit()
+    else:
+        text = TEXTS[number_of_text - 1]
+    
+except ValueError:
     print("You entered wrong number. Program exits.")
     exit()
-else:
-    text = TEXTS[number_of_text - 1]
 
 #Analýza textu
 split = text.split()
@@ -118,13 +123,13 @@ for x in list:
 dictionary = dict(zip(list, final))
 
 headers = ("LEN", "Occurences", "NR.")
-title = "  |  ".join(headers)
+title = " | ".join(headers)
 print(title.center(40))
 
 
 for key, item in dictionary.items():
     hvezdy = "*" * item
-    line = f"{key:>2}|{hvezdy:<14}|{item:>2}"
+    line = f"{key:>2}|{hvezdy:<18}|{item:>2}"
     print(line.center(40))
 
     
