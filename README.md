@@ -1,1 +1,0 @@
-Analyzátor textu
