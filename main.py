@@ -28,17 +28,19 @@ TEXTS = [
 ]
 
 
-uzivatele = {
-    "jmeno":"heslo",
-    "uziv123":"heslo123"
+users = {
+    "bob" : "123",
+    "ann" : "pass123",
+    "mike": "password123",
+    "liz" : "pass123"
 }
 
 separator = "-" * 40
-username = input("Zadej uziv. jmeno: ")
-password = input("Zadej sve heslo: ")
+username = input("Please enter your username: ")
+password = input("Please enter your password: ")
 
 #1. varianta přihlášení
-if username in uzivatele.keys() and uzivatele[username] == password:
+if username in users.keys() and users[username] == password:
     print(f"username: {username}\npassword: {password}")
     print(separator)
     print("Welcome to the app, " + username)
@@ -48,7 +50,7 @@ else:
     exit()
 
 
-#Zadávání čísla textu uživatel a vrácení textu pro další analýzu
+#2. Zadávání čísla textu uživatel a vrácení textu pro další analýzu
 try:
     number_of_text = int(input("Enter a number btw. 1 and 3 to select: "))
     if number_of_text not in range(1,4):
@@ -61,7 +63,7 @@ except ValueError:
     print("You entered wrong number. Program exits.")
     exit()
 
-#Analýza textu
+#3. Analýza textu
 split = text.split()
 word_count = len(split)
 
@@ -103,7 +105,6 @@ print(f"There are {k} uppercase words.")
 print(f"There are {l} lowercase words.")
 print(f"There are {m} numeric strings.")
 print(f"The sum of all the numbers {sum}")
-print(f"There are {word_count} words in the selected text.")
 print(separator)
 
 
