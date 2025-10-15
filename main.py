@@ -98,6 +98,7 @@ for word in split:
     number_of_letters = len(strip_word)
     numbers.append(number_of_letters)
 
+# První část odpovědí
 print(separator)
 print(f"There are {word_count} words in the selected text.")
 print(f"There are {i} titlecase words.")
@@ -107,7 +108,7 @@ print(f"There are {m} numeric strings.")
 print(f"The sum of all the numbers {sum}")
 print(separator)
 
-
+# Tvorba jednoduchého sloupcového grafu podle četnosti různých délek slov v textu
 list = []
 for x in numbers:
     if x not in list:
